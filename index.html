@@ -1,0 +1,391 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Personal portfolio of Alex Rivera — a product-focused software engineer crafting clean, performant web experiences." />
+  <meta name="color-scheme" content="dark" />
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="Alex Rivera — Software Engineer" />
+  <meta property="og:description" content="Product-focused software engineer crafting clean, performant web experiences." />
+  <meta property="og:type" content="website" />
+
+  <title>Alex Rivera — Software Engineer</title>
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Playfair+Display:ital,wght@0,700;1,700&display=swap"
+    rel="stylesheet"
+  />
+
+  <link rel="stylesheet" href="styles.css" />
+
+  <!-- Animate-hidden rule in <head> to avoid FOUC -->
+  <style>
+    .animate-hidden {
+      opacity: 0;
+      transform: translateY(20px);
+      transition: opacity 0.55s cubic-bezier(0.4, 0, 0.2, 1),
+                  transform 0.55s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+    .animate-hidden.is-visible {
+      opacity: 1;
+      transform: none;
+    }
+  </style>
+</head>
+
+<body>
+  <!-- Skip link for keyboard users -->
+  <a href="#main" class="skip-link">Skip to main content</a>
+
+  <!-- ===================== NAVIGATION ===================== -->
+  <header>
+    <nav class="nav" aria-label="Main navigation">
+      <a href="#" class="nav__logo" aria-label="Alex Rivera — home">
+        Alex<span>.</span>
+      </a>
+
+      <!-- Desktop links -->
+      <ul class="nav__links" role="list">
+        <li><a href="#about">About</a></li>
+        <li><a href="#portfolio">Work</a></li>
+        <li><a href="#contact" class="nav__cta">Get in touch</a></li>
+      </ul>
+
+      <!-- Mobile hamburger -->
+      <button
+        id="hamburger"
+        class="nav__hamburger"
+        aria-controls="mobile-nav"
+        aria-expanded="false"
+        aria-label="Open navigation menu"
+      >
+        <span aria-hidden="true"></span>
+        <span aria-hidden="true"></span>
+        <span aria-hidden="true"></span>
+      </button>
+    </nav>
+
+    <!-- Mobile menu -->
+    <nav id="mobile-nav" class="nav__mobile" aria-label="Mobile navigation">
+      <a href="#about">About</a>
+      <a href="#portfolio">Work</a>
+      <a href="#contact">Get in touch</a>
+    </nav>
+  </header>
+
+  <!-- ===================== MAIN ===================== -->
+  <main id="main">
+
+    <!-- ---- HERO ---- -->
+    <section class="hero" aria-labelledby="hero-title">
+      <p class="hero__eyebrow" aria-hidden="true">Available for work</p>
+
+      <h1 class="hero__title" id="hero-title">
+        I build things<br />
+        for the <em>web</em>.
+      </h1>
+
+      <p class="hero__subtitle">
+        Hi, I'm Alex — a product-focused software engineer with 5+ years of
+        experience turning ideas into fast, accessible, and delightful digital
+        experiences. Currently open to new opportunities.
+      </p>
+
+      <div class="hero__actions">
+        <a href="#portfolio" class="btn btn--primary">
+          <svg class="icon" viewBox="0 0 20 20" aria-hidden="true" focusable="false">
+            <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm1-11a1 1 0 10-2 0v3.586L7.707 9.293a1 1 0 00-1.414 1.414l3 3a1 1 0 001.414 0l3-3a1 1 0 00-1.414-1.414L11 10.586V7z" clip-rule="evenodd"/>
+          </svg>
+          View my work
+        </a>
+        <a href="#contact" class="btn btn--ghost">
+          Let's talk
+        </a>
+      </div>
+
+      <div class="hero__scroll" aria-hidden="true">
+        <span class="hero__scroll-dot"></span>
+        Scroll to explore
+      </div>
+    </section>
+
+    <!-- ---- PORTFOLIO ---- -->
+    <section id="portfolio" class="section" aria-labelledby="portfolio-title">
+      <div class="section__header" data-animate>
+        <p class="section__label">Selected work</p>
+        <h2 class="section__title" id="portfolio-title">
+          Projects I'm proud of
+        </h2>
+        <p class="section__desc">
+          A curated selection of work spanning product design, full-stack
+          engineering, and open-source tooling.
+        </p>
+      </div>
+
+      <!-- BENTO GRID -->
+      <div class="bento" role="list" aria-label="Portfolio projects">
+
+        <!-- Project 1 — Featured -->
+        <article class="card card--project-1" role="listitem" data-animate>
+          <span class="card__tag">
+            <svg class="icon" viewBox="0 0 20 20" aria-hidden="true"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+            Featured
+          </span>
+
+          <div class="card__visual" aria-hidden="true">
+            <div class="card__visual-inner">🚀</div>
+          </div>
+
+          <h3 class="card__title">Orbit — SaaS Analytics Dashboard</h3>
+          <p class="card__desc">
+            End-to-end analytics platform for growth teams. Built real-time
+            charts, a custom query builder, and a multi-tenant billing system
+            serving 2 000+ active users.
+          </p>
+
+          <ul class="card__tech" aria-label="Technologies used">
+            <li class="tech-pill">Next.js</li>
+            <li class="tech-pill">TypeScript</li>
+            <li class="tech-pill">Postgres</li>
+            <li class="tech-pill">Stripe</li>
+            <li class="tech-pill">Tailwind</li>
+          </ul>
+
+          <div class="card__links">
+            <a
+              href="#"
+              class="card__link card__link--primary"
+              aria-label="View Orbit live demo"
+            >
+              <svg class="icon" viewBox="0 0 20 20" aria-hidden="true"><path d="M11 3a1 1 0 100 2h2.586l-6.293 6.293a1 1 0 101.414 1.414L15 6.414V9a1 1 0 102 0V4a1 1 0 00-1-1h-5z"/><path d="M5 5a2 2 0 00-2 2v8a2 2 0 002 2h8a2 2 0 002-2v-3a1 1 0 10-2 0v3H5V7h3a1 1 0 000-2H5z"/></svg>
+              Live demo
+            </a>
+            <a
+              href="#"
+              class="card__link card__link--secondary"
+              aria-label="View Orbit source code on GitHub"
+            >
+              <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z"/></svg>
+              Source
+            </a>
+          </div>
+        </article>
+
+        <!-- Project 2 -->
+        <article class="card card--project-2" role="listitem" data-animate>
+          <span class="card__tag">Open Source</span>
+
+          <div class="card__visual" aria-hidden="true">
+            <div class="card__visual-inner">🌊</div>
+          </div>
+
+          <h3 class="card__title">FlowKit — React Component Library</h3>
+          <p class="card__desc">
+            Accessible, headless UI primitives for React. Ships zero runtime
+            styles, WAI-ARIA compliant, with full TypeScript types.
+            500+ GitHub stars.
+          </p>
+
+          <ul class="card__tech" aria-label="Technologies used">
+            <li class="tech-pill">React</li>
+            <li class="tech-pill">TypeScript</li>
+            <li class="tech-pill">Radix UI</li>
+            <li class="tech-pill">Storybook</li>
+          </ul>
+
+          <div class="card__links">
+            <a href="#" class="card__link card__link--primary" aria-label="View FlowKit live demo">Live demo</a>
+            <a href="#" class="card__link card__link--secondary" aria-label="View FlowKit on GitHub">GitHub</a>
+          </div>
+        </article>
+
+        <!-- Project 3 -->
+        <article class="card card--project-3" role="listitem" data-animate>
+          <span class="card__tag">Fullstack</span>
+
+          <div class="card__visual" aria-hidden="true">
+            <div class="card__visual-inner">🌿</div>
+          </div>
+
+          <h3 class="card__title">Verdant — Sustainable Shopping Companion</h3>
+          <p class="card__desc">
+            Browser extension and web app that scores products on environmental
+            impact in real time. Won 1st place at GreenHack 2024.
+          </p>
+
+          <ul class="card__tech" aria-label="Technologies used">
+            <li class="tech-pill">Svelte</li>
+            <li class="tech-pill">Node.js</li>
+            <li class="tech-pill">Redis</li>
+            <li class="tech-pill">Chrome API</li>
+          </ul>
+
+          <div class="card__links">
+            <a href="#" class="card__link card__link--primary" aria-label="View Verdant case study">Case study</a>
+            <a href="#" class="card__link card__link--secondary" aria-label="View Verdant on GitHub">GitHub</a>
+          </div>
+        </article>
+
+      </div><!-- /.bento -->
+    </section>
+
+    <!-- ---- CONTACT ---- -->
+    <section id="contact" class="contact" aria-labelledby="contact-title">
+      <div class="section contact-grid">
+
+        <!-- Left: info -->
+        <div data-animate>
+          <p class="contact__info-label">Contact</p>
+          <h2 class="contact__title" id="contact-title">
+            Let's build something great together
+          </h2>
+          <p class="contact__body">
+            Whether you have a project in mind, want to collaborate, or just
+            want to say hi — I'd love to hear from you. I typically respond
+            within 24 hours.
+          </p>
+
+          <ul class="contact__links" aria-label="Contact channels" role="list">
+            <li>
+              <a
+                href="mailto:alex@example.com"
+                class="contact__link-item"
+                aria-label="Email alex@example.com"
+              >
+                <span class="contact__link-icon" aria-hidden="true">✉️</span>
+                alex@example.com
+              </a>
+            </li>
+            <li>
+              <a
+                href="https://github.com/"
+                class="contact__link-item"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="GitHub profile (opens in new tab)"
+              >
+                <span class="contact__link-icon" aria-hidden="true">
+                  <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z"/></svg>
+                </span>
+                github.com/alexrivera
+              </a>
+            </li>
+            <li>
+              <a
+                href="https://linkedin.com/"
+                class="contact__link-item"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="LinkedIn profile (opens in new tab)"
+              >
+                <span class="contact__link-icon" aria-hidden="true">in</span>
+                linkedin.com/in/alexrivera
+              </a>
+            </li>
+          </ul>
+        </div>
+
+        <!-- Right: form -->
+        <div data-animate>
+          <form
+            id="contact-form"
+            novalidate
+            aria-label="Contact form"
+          >
+            <div class="form-row">
+              <div class="form-group">
+                <label for="name">Full name <span aria-hidden="true">*</span></label>
+                <input
+                  type="text"
+                  id="name"
+                  name="name"
+                  autocomplete="name"
+                  required
+                  aria-required="true"
+                  aria-describedby="name-error"
+                  placeholder="Jane Smith"
+                />
+                <span id="name-error" class="form__error" role="alert" aria-live="polite"></span>
+              </div>
+
+              <div class="form-group">
+                <label for="email">Email address <span aria-hidden="true">*</span></label>
+                <input
+                  type="email"
+                  id="email"
+                  name="email"
+                  autocomplete="email"
+                  required
+                  aria-required="true"
+                  aria-describedby="email-error"
+                  placeholder="jane@example.com"
+                />
+                <span id="email-error" class="form__error" role="alert" aria-live="polite"></span>
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label for="subject">Subject <span aria-hidden="true">*</span></label>
+              <input
+                type="text"
+                id="subject"
+                name="subject"
+                required
+                aria-required="true"
+                aria-describedby="subject-error"
+                placeholder="Project enquiry, collaboration, etc."
+              />
+              <span id="subject-error" class="form__error" role="alert" aria-live="polite"></span>
+            </div>
+
+            <div class="form-group">
+              <label for="message">Message <span aria-hidden="true">*</span></label>
+              <textarea
+                id="message"
+                name="message"
+                rows="5"
+                required
+                aria-required="true"
+                aria-describedby="message-error"
+                placeholder="Tell me about your project or idea…"
+              ></textarea>
+              <span id="message-error" class="form__error" role="alert" aria-live="polite"></span>
+            </div>
+
+            <div id="form-status" class="form__status" aria-live="polite"></div>
+
+            <button type="submit" class="btn btn--primary btn--full">
+              <svg class="icon" viewBox="0 0 20 20" aria-hidden="true" focusable="false">
+                <path d="M2.003 5.884L10 9.882l7.997-3.998A2 2 0 0016 4H4a2 2 0 00-1.997 1.884z"/>
+                <path d="M18 8.118l-8 4-8-4V14a2 2 0 002 2h12a2 2 0 002-2V8.118z"/>
+              </svg>
+              Send message
+            </button>
+          </form>
+        </div>
+
+      </div><!-- /.contact-grid -->
+    </section>
+
+  </main>
+
+  <!-- ===================== FOOTER ===================== -->
+  <footer class="footer">
+    <p>
+      Designed &amp; built by
+      <a href="#">Alex Rivera</a>
+      &nbsp;·&nbsp;
+      <a href="https://github.com/" target="_blank" rel="noopener noreferrer">GitHub</a>
+      &nbsp;·&nbsp;
+      <a href="https://linkedin.com/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+    </p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
